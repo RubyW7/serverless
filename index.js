@@ -3,8 +3,13 @@ const { DynamoDBClient, GetItemCommand, PutItemCommand } = require('@aws-sdk/cli
 const { SESClient, SendEmailCommand } = require('@aws-sdk/client-ses');
 
 // Initialize AWS SDK v3 clients
+<<<<<<< HEAD
 const dynamoDbClient = new DynamoDBClient({ region: process.env.EmailTrackingDynamoDBRegion || "us-west-2" });
 const sesClient = new SESClient({ region: process.env.EmailTrackingDynamoDBRegion || "us-west-2" });
+=======
+const dynamoDbClient = new DynamoDBClient({ region: process.env.EmailTrackingDynamoDBRegion || "us-east-1" });
+const sesClient = new SESClient({ region: process.env.EmailTrackingDynamoDBRegion || "us-east-1" });
+>>>>>>> main
 
 // Function to check if an email has already been sent
 const checkIfEmailSentAlready = async (emailTrackingDynamoDBTable, userEmail) => {
@@ -88,5 +93,9 @@ exports.handler = async (event) => {
     console.error("Error processing the Lambda function:", err);
     return err; // Returning the error for debugging purposes
   }
+<<<<<<< HEAD
   return "Success"; // Indicate successful execution
+=======
+  return "Success"; 
+>>>>>>> main
 };
