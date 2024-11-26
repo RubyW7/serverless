@@ -88,5 +88,5 @@ exports.handler = async (event) => {
     console.error("Error processing the Lambda function:", err);
     return err; // Returning the error for debugging purposes
   }
-  return "Success"; // Indicate successful execution
+  return "Success";
 };
