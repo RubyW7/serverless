@@ -12,8 +12,8 @@ exports.handler = async (event) => {
   // 解析从SNS传来的消息
   const message = JSON.parse(event.Records[0].Sns.Message);
   const email = message.email;
-  const firstName = message.firstName;
-  const token = message.token; // 现在令牌是从SNS消息中获取的
+  const firstName = message.firs_tName;
+  const token = message.userToken; // 现在令牌是从SNS消息中获取的
 
   try {
     // 使用Mailgun发送验证邮件
