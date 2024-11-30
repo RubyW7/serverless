@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -13,6 +14,9 @@
     "@aws-sdk/client-dynamodb": "^3.693.0",
     "@aws-sdk/client-s3": "^3.693.0",
     "@aws-sdk/client-ses": "^3.693.0",
-    "aws-sdk": "^2.1692.0"
+    "aws-sdk": "^2.1692.0",
+    "form-data": "^4.0.1",
+    "mailgun": "^0.5.0",
+    "mailgun.js": "^10.2.4"
   }
 }

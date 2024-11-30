@@ -1,3 +1,3 @@
 # serverless
 
-zip function.zip index.js
+zip -r function.zip .
