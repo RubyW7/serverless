@@ -9,17 +9,16 @@ key: process.env.MAILGUN_API_KEY
 });
 
 export const handler = async (event) => {
-// 解析从SNS传来的消息
 const message = JSON.parse(event.Records[0].Sns.Message);
 const email = message.email;
 const firstName = message.first_name;
-const token = message.userToken;  // 现在令牌是从SNS消息中获取的
+const token = message.userToken;  // get token from sns
 
 
 
 
 try {
-  // 使用Mailgun发送验证邮件
+  // use Mailgun send email
   const emailResponse = await mg.messages.create(process.env.MAILGUN_DOMAIN, {
     from: 'no-reply@demo.rubyw.xyz',
     to: [email],
@@ -34,7 +33,7 @@ Welcome to our website! We're excited to have you here.
 
 
 
-Please click on the following link to verify your email address: http://demo.rubyw.xyz/verifyUserEmail?email=${email}&token=${token}
+Please click on the following link to verify your email address: http://demo.rubyw.xyz/v1/user/verifyUserEmail?email=${email}&token=${token}
 
 
 
@@ -56,7 +55,7 @@ Your Company Name`,
 
 
 
-<p>Please click on the following link to verify your email address: <a href="http://demo.rubyw.xyz/verifyUserEmail?email=${email}&token=${token}">Verify Email</a></p>
+<p>Please click on the following link to verify your email address: <a href="http://demo.rubyw.xyz/v1/user/verifyUserEmail?email=${email}&token=${token}">Verify Email</a></p>
 
 
 
