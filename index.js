@@ -63,10 +63,6 @@ Your Company Name`,
 
 <p>If you did not request this, please ignore this email.</p>
 
-
-
-
-<p>Best Regards,<br>Your Company Name</p>`
   });
   console.log('Email sent:', emailResponse);
 } catch (error) {
