@@ -7,7 +7,7 @@ import {
 } from "@aws-sdk/client-secrets-manager";
 
 
-const secret_name = "email_service_credentials2";
+const secret_name = process.env.SECRET_ID;
 
 
 const client = new SecretsManagerClient({
